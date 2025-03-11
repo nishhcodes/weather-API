@@ -1,13 +1,22 @@
-const URL =
-  "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/india?key=FZ9FCM8RL2W3X3KAPPELN6L3Q";
+const input = document.getElementById("input");
+const submit = document.getElementById("submit");
+const results = document.createElement("div");
 
-const weatherData = async () => {
-  const res = await fetch(URL, { mode: "cors" });
-  const data = await res.json();
-  console.log(data);
-  console.log(data.address);
-  console.log(data.currentConditions.conditions);
-  console.log(data.currentConditions.feelslike);
-  console.log(data.currentConditions.humidity);
-};
-weatherData();
+submit.addEventListener("click", (e) => {
+  results.innerHTML = "";
+  e.preventDefault();
+  const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input.value}?key=FZ9FCM8RL2W3X3KAPPELN6L3Q`;
+  const weatherData = async () => {
+    const res = await fetch(URL, { mode: "cors" });
+    const data = await res.json();
+    results.innerHTML = `
+    <p>Current Condition: ${data.currentConditions.conditions}</p>
+    <p>feels like: ${data.currentConditions.feelslike}</p>
+    <p>Humidity: ${data.currentConditions.humidity}</p>
+    <p>Precip: ${data.currentConditions.precip}</p>
+    `;
+    console.log(data);
+    document.body.appendChild(results);
+  };
+  weatherData();
+});
