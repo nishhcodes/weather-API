@@ -1,0 +1,23 @@
+{
+  "homepage": "https://nishhcodes.github.io/weather-API",
+  "name": "weather-api",
+  "version": "1.0.0",
+  "description": "This is a weather application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishhcodes/weather-API.git"
+  },
+  "author": "nishhcodes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishhcodes/weather-API/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
