@@ -9,9 +9,14 @@ submit.addEventListener("click", (e) => {
   const weatherData = async () => {
     const res = await fetch(URL, { mode: "cors" });
     const data = await res.json();
+
+    let fahrenheit = data.currentConditions.feelslike;
+    let toCelsius = ((fahrenheit - 32) * 5) / 9;
     results.innerHTML = `
+    <p class="feels-like">${toCelsius.toFixed(
+      0
+    )}<span class="degree">°</span><sup>c</sup></p>
     <p>Current Condition: ${data.currentConditions.conditions}</p>
-    <p>feels like: ${data.currentConditions.feelslike}</p>
     <p>Humidity: ${data.currentConditions.humidity}</p>
     <p>Precip: ${data.currentConditions.precip}</p>
     `;

@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Open Sans, sans-serif;
+}
+
+:root {
+  --bg-white: #121212;
+  --bg-pink: pink;
+  --bg-purple: purple;
+  --text-color: #fff;
+  --btn-bg: orange;
+}
+
+body {
+  background-image: url("./images/cloud-image.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+@media (max-width: 468px) {
+  .form-wrapper {
+    padding: 1rem;
+    .search-box {
+      border: 1px solid var(--text-color);
+      font-size: 1.8rem;
+      max-width: 300px;
+      padding: 0.2rem 1rem;
+      border-radius: 4px;
+    }
+
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-btn {
+      background-color: var(--btn-bg);
+      border: none;
+      color: var(--text-color);
+      font-size: 1.6rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+    }
+  }
+  .feels-like {
+    color: var(--text-color);
+    font-size: 6rem;
+    text-align: center;
+  }
+  sup {
+    font-size: 4rem;
+  }
+}

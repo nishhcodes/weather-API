@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>weather | APP</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" type="module"></script>
   </head>
   <body>
     <main>
-      <form>
-        <input type="text" id="input" required />
-        <button type="submit" id="submit">search</button>
+      <form class="form-wrapper">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="input"
+            required
+            class="search-box"
+            placeholder="search location"
+          />
+          <button type="submit" id="submit" class="search-btn">search</button>
+        </div>
       </form>
     </main>
   </body>
